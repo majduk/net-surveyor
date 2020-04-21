@@ -1,7 +1,7 @@
 # NET-SURVEYOR
 
 ## About Net-Surveyor
-Net-Surveyor is an LLDP based tool which purpose it ro collect, agggregate and visualise network topology data from cloud environment, thus simplifying network configuration and troubleshooting.
+Net-Surveyor is an LLDP based tool which purpose is to collect, agggregate and visualise network topology data from cloud environment, thus simplifying network configuration and troubleshooting.
 
 Net-Surveyor bases on [Link Layer Doscovery Protocol](https://en.wikipedia.org/wiki/Link_Layer_Discovery_Protocol) - LLDP - data about VLANs, switch port connectivity and link aggregation.
 
