@@ -67,11 +67,6 @@ This step merges the collected data into single JSON file.
 
 ### SSH
 
-Prerequisites:
-- SSH keys exchanged with all the machies
-- LLDP client installed on all the machies
-- internal LLDP agent disabled on Intel xx710 cards
-
 1. Create txt fle conatining hostnames of all machines to connect to, eg: `machines.txt`
 2. Collect LLDP data:
 ```
