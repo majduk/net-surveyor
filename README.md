@@ -14,6 +14,28 @@ The tool generates 3 types of reports:
 - SVG network topology map with the same information as above
 - Python NetworkX graph
 
+### Juju 
+
+Net-Surveyor can collect LLDP data from an existing juju environment. Please note that it will install LLDP on all the machines.
+
+1. Clone the Net-Surveyor repository
+2. Collect LLDP data:
+```
+./collect-lldp-juju.py -i 
+```
+This collects the data by default into `/tmp/lldp/`. `-i` installs LLDP on the machines. Note that if this is fresh LLDP install, this step may need to be repeated as LLDP data is collected over time, based on incoming LLDP PDUs.
+
+3. Build topology from the collected data:
+```
+./build_netmap.py -o netmap.json
+```
+This step merges the collected data into single JSON file.
+
+4. Create report:
+```
+./report_html.py -i netmap.json -o netmap.html
+```
+
 ### Juju and magpie
 
 1. Create a [juju](https://jaas.ai/) [magpie](https://jaas.ai/u/openstack-charmers-next/magpie) bundle for your environment. Magpie charm can be deployed on both bare metal machines and containers. Make sure to enable LLDP collection on bare metal machines:
@@ -50,7 +72,7 @@ juju deploy ./magpie-bundle.yaml
 4. Clone the Net-Surveyor repository
 5. Collect LLDP data:
 ```
-./collect-lldp-juju.sh
+./collect-lldp-juju.py
 ```
 This collects the data by default into `/tmp/lldp/`
 
